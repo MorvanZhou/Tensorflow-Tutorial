@@ -1,5 +1,5 @@
 """
-Know more, visit 莫烦Python: https://morvanzhou.github.io/tutorials/
+Know more, visit my Python tutorial page: https://morvanzhou.github.io/tutorials/
 My Youtube Channel: https://www.youtube.com/user/MorvanZhou
 
 Dependencies:
@@ -9,7 +9,6 @@ numpy
 """
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
-import matplotlib.pyplot as plt
 import numpy as np
 
 tf.set_random_seed(1)

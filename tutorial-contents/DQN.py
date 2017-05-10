@@ -1,5 +1,5 @@
 """
-Know more, visit 莫烦Python: https://morvanzhou.github.io/tutorials/
+Know more, visit my Python tutorial page: https://morvanzhou.github.io/tutorials/
 My Youtube Channel: https://www.youtube.com/user/MorvanZhou
 More about Reinforcement learning: https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/
 
