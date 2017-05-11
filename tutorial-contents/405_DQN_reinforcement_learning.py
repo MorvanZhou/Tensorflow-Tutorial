@@ -7,6 +7,7 @@ Dependencies:
 tensorflow: 1.1.0
 matplotlib
 numpy
+gym: 0.8.1
 """
 import tensorflow as tf
 import numpy as np
@@ -40,11 +41,11 @@ with tf.variable_scope('q'):        # evaluation network
     l_eval = tf.layers.dense(tf_s, 10, tf.nn.relu, kernel_initializer=tf.random_normal_initializer(0, 0.1))
     q = tf.layers.dense(l_eval, N_ACTIONS, kernel_initializer=tf.random_normal_initializer(0, 0.1))
 
-with tf.variable_scope('q_next'):   # target network
-    l_target = tf.layers.dense(tf_s_, 10, tf.nn.relu)
-    q_next = tf.layers.dense(l_target, N_ACTIONS)
+with tf.variable_scope('q_next'):   # target network, not to train
+    l_target = tf.layers.dense(tf_s_, 10, tf.nn.relu, trainable=False)
+    q_next = tf.layers.dense(l_target, N_ACTIONS, trainable=False)
 
-q_target = tf.stop_gradient(tf_r + GAMMA * tf.reduce_max(q_next, axis=1)) # shape=(None, ), not need gradient for q_next
+q_target = tf_r + GAMMA * tf.reduce_max(q_next, axis=1)                   # shape=(None, ),
 a_one_hot = tf.one_hot(tf_a, depth=N_ACTIONS, dtype=tf.float32)
 q_wrt_a = tf.reduce_sum(q * a_one_hot, axis=1)                            # shape=(None, ), q for current state
 
@@ -79,8 +80,8 @@ def learn():
     # update target net
     global LEARNING_STEP_COUNTER
     if LEARNING_STEP_COUNTER % TARGET_REPLACE_ITER == 0:
-        t_params = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope='q_next')
-        e_params = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope='q')
+        t_params = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope='q_next')
+        e_params = tf.get_collection(tf.GraphKeys.GLOBAL_VARIABLES, scope='q')
         sess.run([tf.assign(t, e) for t, e in zip(t_params, e_params)])
     LEARNING_STEP_COUNTER += 1
 

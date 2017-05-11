@@ -23,8 +23,8 @@ y = np.power(x, 2) + noise                          # shape (100, 1) + some nois
 plt.scatter(x, y)
 plt.show()
 
-tf_x = tf.placeholder(tf.float32, x.shape, 'x')     # input x
-tf_y = tf.placeholder(tf.float32, y.shape, 'y')     # input y
+tf_x = tf.placeholder(tf.float32, x.shape)     # input x
+tf_y = tf.placeholder(tf.float32, y.shape)     # input y
 
 # neural network layers
 l1 = tf.layers.dense(tf_x, 10, tf.nn.relu)          # hidden layer

@@ -4,8 +4,6 @@ My Youtube Channel: https://www.youtube.com/user/MorvanZhou
 
 Dependencies:
 tensorflow: 1.1.0
-matplotlib
-numpy
 """
 import tensorflow as tf
 

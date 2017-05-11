@@ -27,8 +27,8 @@ y = np.hstack((y0, y1))  # shape (200, )
 plt.scatter(x[:, 0], x[:, 1], c=y, s=100, lw=0, cmap='RdYlGn')
 plt.show()
 
-tf_x = tf.placeholder(tf.float32, x.shape, 'x')     # input x
-tf_y = tf.placeholder(tf.int32, y.shape, 'y')     # input y
+tf_x = tf.placeholder(tf.float32, x.shape)     # input x
+tf_y = tf.placeholder(tf.int32, y.shape)     # input y
 
 # neural network layers
 l1 = tf.layers.dense(tf_x, 10, tf.nn.relu)          # hidden layer

@@ -1,7 +1,0 @@
-compile from source, 折腾的方式.
-但是快.
-https://www.tensorflow.org/install/install_sources
-
-装 brew & bazel
-
-https://bazel.build/versions/master/docs/install-os-x.html#install-with-installer-mac-os-x
