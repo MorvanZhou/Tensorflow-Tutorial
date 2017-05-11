@@ -8,7 +8,7 @@
 
 <br>
 
-** If you'd like to use PyTorch, no worries, I made a new PyTorch Tutorial just like Tensorflow. Here is the link:
+**If you'd like to use PyTorch, no worries, I made a new PyTorch Tutorial just like Tensorflow. Here is the link:
  [https://github.com/MorvanZhou/PyTorch-Tutorial](https://github.com/MorvanZhou/PyTorch-Tutorial)**
 
 # Tensorflow 2017 Tutorials
