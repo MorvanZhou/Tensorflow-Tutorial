@@ -48,8 +48,7 @@ loss = tf.losses.mean_squared_error(labels=tf_y, predictions=outs)  # compute co
 train_op = tf.train.AdamOptimizer(LR).minimize(loss)
 
 sess = tf.Session()
-init_op = tf.group(tf.global_variables_initializer())
-sess.run(init_op)     # initialize var in graph
+sess.run(tf.global_variables_initializer())     # initialize var in graph
 
 plt.figure(1, figsize=(12, 5))
 plt.ion()           # continuously plot

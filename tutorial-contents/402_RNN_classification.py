@@ -22,7 +22,7 @@ INPUT_SIZE = 28         # rnn input size / image width
 LR = 0.01               # learning rate
 
 # data
-mnist = input_data.read_data_sets('./mnist', one_hot=True)
+mnist = input_data.read_data_sets('./mnist', one_hot=True)              # they has been normalized to range (0,1)
 test_x = mnist.test.images[:2000]
 test_y = mnist.test.labels[:2000]
 
@@ -34,7 +34,7 @@ plt.title('%i' % np.argmax(mnist.train.labels[0]))
 plt.show()
 
 # tensorflow placeholders
-tf_x = tf.placeholder(tf.float32, [None, TIME_STEP * INPUT_SIZE])/255.  # shape(batch, 784), normalize to range (0, 1)
+tf_x = tf.placeholder(tf.float32, [None, TIME_STEP * INPUT_SIZE])       # shape(batch, 784)
 image = tf.reshape(tf_x, [-1, TIME_STEP, INPUT_SIZE])                   # (batch, height, width, channel)
 tf_y = tf.placeholder(tf.int32, [None, 10])                             # input y
 
