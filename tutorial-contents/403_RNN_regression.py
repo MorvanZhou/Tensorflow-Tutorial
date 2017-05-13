@@ -55,7 +55,7 @@ plt.ion()           # continuously plot
 plt.show()
 
 for step in range(60):
-    start, end = step * np.pi, (step+1)*np.pi   # time steps
+    start, end = step * np.pi, (step+1)*np.pi   # time range
     # use sin predicts cos
     steps = np.linspace(start, end, TIME_STEP)
     x = np.sin(steps)[np.newaxis, :, np.newaxis]    # shape (batch, time_step, input_size)
