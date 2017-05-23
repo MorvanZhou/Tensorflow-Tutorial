@@ -57,7 +57,6 @@ sess.run(tf.global_variables_initializer())
 # initialize figure
 f, a = plt.subplots(2, N_TEST_IMG, figsize=(5, 2))
 plt.ion()   # continuously plot
-plt.show()
 
 # original data (first row) for viewing
 view_data = mnist.test.images[:N_TEST_IMG]

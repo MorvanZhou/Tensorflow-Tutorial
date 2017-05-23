@@ -59,7 +59,6 @@ sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
 plt.ion()   # something about plotting
-plt.show()
 
 for t in range(500):
     sess.run([o_train, d_train], {tf_x: x, tf_y: y, tf_is_training: True})  # train, set is_training=True

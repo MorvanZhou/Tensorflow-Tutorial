@@ -45,7 +45,6 @@ init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initial
 sess.run(init_op)     # initialize var in graph
 
 plt.ion()   # something about plotting
-plt.show()
 for step in range(100):
     # train and net output
     _, acc, pred = sess.run([train_op, accuracy, output], {tf_x: x, tf_y: y})

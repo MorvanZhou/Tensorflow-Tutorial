@@ -38,7 +38,7 @@ sess = tf.Session()                                 # control training and other
 sess.run(tf.global_variables_initializer())         # initialize var in graph
 
 plt.ion()   # something about plotting
-plt.show()
+
 for step in range(100):
     # train and net output
     _, l, pred = sess.run([train_op, loss, output], {tf_x: x, tf_y: y})

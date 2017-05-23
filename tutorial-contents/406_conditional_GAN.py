@@ -65,7 +65,6 @@ sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
 plt.ion()   # something about continuous plotting
-plt.show()
 for step in range(7000):
     artist_paintings, labels = artist_works()               # real painting from artist
     G_ideas = np.random.randn(BATCH_SIZE, N_IDEAS)

@@ -38,7 +38,6 @@ test_y = np.square(test_x) - 5 + noise
 # plot input data
 plt.scatter(x, y, c='#FF9359', s=50, alpha=0.5, label='train')
 plt.legend(loc='upper left')
-plt.show()
 
 # tensorflow placeholder
 tf_x = tf.placeholder(tf.float32, [None, 1])
