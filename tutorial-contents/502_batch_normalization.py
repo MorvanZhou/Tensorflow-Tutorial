@@ -82,7 +82,6 @@ sess.run(tf.global_variables_initializer())
 # plot layer input distribution
 f, axs = plt.subplots(4, N_HIDDEN+1, figsize=(10, 5))
 plt.ion()   # something about plotting
-plt.show()
 
 def plot_histogram(l_in, l_in_bn, pre_ac, pre_ac_bn):
     for i, (ax_pa, ax_pa_bn, ax,  ax_bn) in enumerate(zip(axs[0, :], axs[1, :], axs[2, :], axs[3, :])):
