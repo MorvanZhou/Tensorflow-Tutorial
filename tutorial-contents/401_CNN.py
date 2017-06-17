@@ -62,12 +62,42 @@ sess = tf.Session()
 init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer()) # the local var is for accuracy_op
 sess.run(init_op)     # initialize var in graph
 
+# following function (plot_with_labels) is for visualization, can be ignored if not interested
+from matplotlib import cm
+try:
+    from sklearn.manifold import TSNE
+    HAS_SK = True
+except:
+    HAS_SK = False
+def plot_with_labels(lowDWeights, labels):
+    plt.cla()
+    X, Y = lowDWeights[:, 0], lowDWeights[:, 1]
+    for x, y, s in zip(X, Y, labels):
+        c = cm.rainbow(int(255 * s / 9))
+        plt.text(x, y, s, backgroundcolor=c, fontsize=9)
+    plt.xlim(X.min(), X.max())
+    plt.ylim(Y.min(), Y.max())
+    plt.title('Visualize last layer')
+    plt.show()
+    plt.pause(0.01)
+
+plt.ion()
+
 for step in range(600):
     b_x, b_y = mnist.train.next_batch(BATCH_SIZE)
     _, loss_ = sess.run([train_op, loss], {tf_x: b_x, tf_y: b_y})
     if step % 50 == 0:
-        accuracy_ = sess.run(accuracy, {tf_x: test_x, tf_y: test_y})
-        print('train loss: %.4f' % loss_, '| test accuracy: %.2f' % accuracy_)
+        accuracy_, flat_representation = sess.run([accuracy, flat], {tf_x: test_x, tf_y: test_y})
+        print('Step:', step, '| train loss: %.4f' % loss_, '| test accuracy: %.2f' % accuracy_)
+
+        if HAS_SK:
+            # Visualization of trained flatten layer (T-SNE)
+            tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)
+            plot_only = 500
+            low_dim_embs = tsne.fit_transform(flat_representation[:plot_only, :])
+            labels = np.argmax(test_y, axis=1)[:plot_only]
+            plot_with_labels(low_dim_embs, labels)
+plt.ioff()
 
 # print 10 predictions from test data
 test_output = sess.run(output, {tf_x: test_x[:10]})

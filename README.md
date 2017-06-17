@@ -53,6 +53,11 @@ All methods mentioned below have their video and text tutorial in Chinese. Visit
     <img class="course-image" src="https://morvanzhou.github.io/static/results/torch/1-1-3.gif">
 </a>
 
+### [CNN](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/401_CNN.py)
+<a href="https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/401_CNN.py">
+    <img class="course-image" src="https://morvanzhou.github.io/static/results/torch/4-1-2.gif" >
+</a>
+
 ### [RNN](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/403_RNN_regression.py)
 
 <a href="https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/403_RNN_regression.py">
