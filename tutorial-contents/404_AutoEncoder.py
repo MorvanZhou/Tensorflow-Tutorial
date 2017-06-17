@@ -62,8 +62,7 @@ plt.ion()   # continuously plot
 view_data = mnist.test.images[:N_TEST_IMG]
 for i in range(N_TEST_IMG):
     a[0][i].imshow(np.reshape(view_data[i], (28, 28)), cmap='gray')
-    a[0][i].set_xticks(())
-    a[0][i].set_yticks(())
+    a[0][i].set_xticks(()); a[0][i].set_yticks(())
 
 for step in range(8000):
     b_x, b_y = mnist.train.next_batch(BATCH_SIZE)
@@ -76,25 +75,16 @@ for step in range(8000):
         for i in range(N_TEST_IMG):
             a[1][i].clear()
             a[1][i].imshow(np.reshape(decoded_data[i], (28, 28)), cmap='gray')
-            a[1][i].set_xticks(())
-            a[1][i].set_yticks(())
-        plt.draw()
-        plt.pause(0.01)
-
+            a[1][i].set_xticks(()); a[1][i].set_yticks(())
+        plt.draw(); plt.pause(0.01)
 plt.ioff()
 
 # visualize in 3D plot
 view_data = test_x[:200]
 encoded_data = sess.run(encoded, {tf_x: view_data})
-fig = plt.figure(2)
-ax = Axes3D(fig)
-X = encoded_data[:, 0]
-Y = encoded_data[:, 1]
-Z = encoded_data[:, 2]
+fig = plt.figure(2); ax = Axes3D(fig)
+X, Y, Z = encoded_data[:, 0], encoded_data[:, 1], encoded_data[:, 2]
 for x, y, z, s in zip(X, Y, Z, test_y):
-    c = cm.rainbow(int(255*s/9))
-    ax.text(x, y, z, s, backgroundcolor=c)
-ax.set_xlim(X.min(), X.max())
-ax.set_ylim(Y.min(), Y.max())
-ax.set_zlim(Z.min(), Z.max())
+    c = cm.rainbow(int(255*s/9)); ax.text(x, y, z, s, backgroundcolor=c)
+ax.set_xlim(X.min(), X.max()); ax.set_ylim(Y.min(), Y.max()); ax.set_zlim(Z.min(), Z.max())
 plt.show()

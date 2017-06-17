@@ -69,15 +69,10 @@ for t in range(500):
         o_loss_, d_loss_, o_out_, d_out_ = sess.run(
             [o_loss, d_loss, o_out, d_out], {tf_x: test_x, tf_y: test_y, tf_is_training: False} # test, set is_training=False
         )
-        plt.scatter(x, y, c='magenta', s=50, alpha=0.3, label='train')
-        plt.scatter(test_x, test_y, c='cyan', s=50, alpha=0.3, label='test')
-        plt.plot(test_x, o_out_, 'r-', lw=3, label='overfitting')
-        plt.plot(test_x, d_out_, 'b--', lw=3, label='dropout(50%)')
-        plt.text(0, -1.2, 'overfitting loss=%.4f' % o_loss_, fontdict={'size': 20, 'color':  'red'})
-        plt.text(0, -1.5, 'dropout loss=%.4f' % d_loss_, fontdict={'size': 20, 'color': 'blue'})
-        plt.legend(loc='upper left')
-        plt.ylim((-2.5, 2.5))
-        plt.pause(0.1)
+        plt.scatter(x, y, c='magenta', s=50, alpha=0.3, label='train'); plt.scatter(test_x, test_y, c='cyan', s=50, alpha=0.3, label='test')
+        plt.plot(test_x, o_out_, 'r-', lw=3, label='overfitting'); plt.plot(test_x, d_out_, 'b--', lw=3, label='dropout(50%)')
+        plt.text(0, -1.2, 'overfitting loss=%.4f' % o_loss_, fontdict={'size': 20, 'color':  'red'}); plt.text(0, -1.5, 'dropout loss=%.4f' % d_loss_, fontdict={'size': 20, 'color': 'blue'})
+        plt.legend(loc='upper left'); plt.ylim((-2.5, 2.5)); plt.pause(0.1)
 
 plt.ioff()
 plt.show()

@@ -73,10 +73,7 @@ for step in range(5000):
         plt.plot(PAINT_POINTS[0], 1 * np.power(PAINT_POINTS[0], 2) + 0, c='#FF9359', lw=3, label='lower bound')
         plt.text(-.5, 2.3, 'D accuracy=%.2f (0.5 for D to converge)' % pa0.mean(), fontdict={'size': 15})
         plt.text(-.5, 2, 'D score= %.2f (-1.38 for G to converge)' % -Dl, fontdict={'size': 15})
-        plt.ylim((0, 3))
-        plt.legend(loc='upper right', fontsize=12)
-        plt.draw()
-        plt.pause(0.01)
+        plt.ylim((0, 3)); plt.legend(loc='upper right', fontsize=12); plt.draw(); plt.pause(0.01)
 
 plt.ioff()
 plt.show()

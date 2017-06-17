@@ -20,12 +20,9 @@ LR = 0.02           # learning rate
 
 # show data
 steps = np.linspace(0, np.pi*2, 100, dtype=np.float32)
-x_np = np.sin(steps)    # float32 for converting torch FloatTensor
-y_np = np.cos(steps)
-plt.plot(steps, y_np, 'r-', label='target (cos)')
-plt.plot(steps, x_np, 'b-', label='input (sin)')
-plt.legend(loc='best')
-plt.show()
+x_np = np.sin(steps); y_np = np.cos(steps)    # float32 for converting torch FloatTensor
+plt.plot(steps, y_np, 'r-', label='target (cos)'); plt.plot(steps, x_np, 'b-', label='input (sin)')
+plt.legend(loc='best'); plt.show()
 
 # tensorflow placeholders
 tf_x = tf.placeholder(tf.float32, [None, TIME_STEP, INPUT_SIZE])        # shape(batch, 5, 1)
@@ -50,8 +47,7 @@ train_op = tf.train.AdamOptimizer(LR).minimize(loss)
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())     # initialize var in graph
 
-plt.figure(1, figsize=(12, 5))
-plt.ion()           # continuously plot
+plt.figure(1, figsize=(12, 5)); plt.ion()       # continuously plot
 
 for step in range(60):
     start, end = step * np.pi, (step+1)*np.pi   # time range
@@ -66,11 +62,7 @@ for step in range(60):
     _, pred_, final_s_ = sess.run([train_op, outs, final_s], feed_dict)     # train
 
     # plotting
-    plt.plot(steps, y.flatten(), 'r-')
-    plt.plot(steps, pred_.flatten(), 'b-')
-    plt.ylim((-1.2, 1.2))
-    plt.draw()
-    plt.pause(0.05)
+    plt.plot(steps, y.flatten(), 'r-'); plt.plot(steps, pred_.flatten(), 'b-')
+    plt.ylim((-1.2, 1.2)); plt.draw(); plt.pause(0.05)
 
-plt.ioff()
-plt.show()
+plt.ioff(); plt.show()
