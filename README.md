@@ -40,6 +40,7 @@ All methods mentioned below have their video and text tutorial in Chinese. Visit
 * Others (WIP)
   * [Dropout](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/501_dropout.py)
   * [Batch Normalization](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/502_batch_normalization.py)
+  * [Visualize Gradient Descent](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/503_visualize_gradient_descent.py)
 
 ### [Regression](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/301_simple_regression.py)
 
@@ -89,7 +90,10 @@ All methods mentioned below have their video and text tutorial in Chinese. Visit
     <img class="course-image" src="https://morvanzhou.github.io/static/results/torch/5-4-2.gif" >
 </a>
 
-
+### [Visualize Gradient Descent](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/503_visualize_gradient_descent.py)
+<a href="https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/503_visualize_gradient_descent.py">
+    <img class="course-image" src="https://morvanzhou.github.io/static/results/tensorflow/5_15_01.gif" >
+</a>
 
 # Donation
 
