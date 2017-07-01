@@ -12,10 +12,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-LR = .1
+LR = 0.1
 REAL_PARAMS = [1.2, 2.5]
 INIT_PARAMS = [[5, 4],
-               [0, 0],
+               [5, 1],
                [2, 4.5]][2]
 
 x = np.linspace(-1, 1, 200, dtype=np.float32)
@@ -53,7 +53,7 @@ with tf.Session() as sess:
 print('a=', a_, 'b=', b_)
 plt.figure(1)
 plt.scatter(x, y, c='b')    # plot data
-plt.plot(x, result, 'r-')   # plot line fitting
+plt.plot(x, result, 'r-', lw=2)   # plot line fitting
 # 3D cost figure
 fig = plt.figure(2); ax = Axes3D(fig)
 a3D, b3D = np.meshgrid(np.linspace(-2, 7, 30), np.linspace(-2, 7, 30))  # parameter space
