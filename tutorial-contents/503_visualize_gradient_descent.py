@@ -18,17 +18,24 @@ INIT_PARAMS = [[5, 4],
                [5, 1],
                [2, 4.5]][2]
 
-x = np.linspace(-1, 1, 200, dtype=np.float32)
+x = np.linspace(-1, 1, 200, dtype=np.float32)   # x data
 
-# test 1
+# Test (1): Visualize a simple linear function with two parameters,
+# you can change LR to 1 to see the different pattern in gradient descent.
+
 # y_fun = lambda a, b: a * x + b
 # tf_y_fun = lambda a, b: a * x + b
 
-# test 2
+
+# Test (2): Using Tensorflow as a calibrating tool for empirical formula like following.
+
 # y_fun = lambda a, b: a * x**3 + b * x**2
 # tf_y_fun = lambda a, b: a * x**3 + b * x**2
 
-# test 3
+
+# Test (3): Most simplest two parameters and two layers Neural Net, and their local & global minimum,
+# you can try different INIT_PARAMS set to visualize the gradient descent.
+
 y_fun = lambda a, b: np.sin(b*np.cos(a*x))
 tf_y_fun = lambda a, b: tf.sin(b*tf.cos(a*x))
 
@@ -50,6 +57,7 @@ with tf.Session() as sess:
         result, _ = sess.run([pred, train_op])                          # training
 
 
+# visualization codes:
 print('a=', a_, 'b=', b_)
 plt.figure(1)
 plt.scatter(x, y, c='b')    # plot data
