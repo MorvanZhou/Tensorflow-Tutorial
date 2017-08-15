@@ -46,8 +46,9 @@ with tf.variable_scope('q_next'):   # target network, not to train
     q_next = tf.layers.dense(l_target, N_ACTIONS, trainable=False)
 
 q_target = tf_r + GAMMA * tf.reduce_max(q_next, axis=1)                   # shape=(None, ),
-a_one_hot = tf.one_hot(tf_a, depth=N_ACTIONS, dtype=tf.float32)
-q_wrt_a = tf.reduce_sum(q * a_one_hot, axis=1)                            # shape=(None, ), q for current state
+
+a_indices = tf.stack([tf.range(tf.shape(tf_a)[0], dtype=tf.int32), tf_a], axis=1)
+q_wrt_a = tf.gather_nd(params=q, indices=a_indices)     # shape=(None, ), q for current state
 
 loss = tf.reduce_mean(tf.squared_difference(q_target, q_wrt_a))
 train_op = tf.train.AdamOptimizer(LR).minimize(loss)
