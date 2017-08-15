@@ -29,6 +29,7 @@ All methods mentioned below have their video and text tutorial in Chinese. Visit
   * [Save and reload](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/303_save_reload.py)
   * [Optimizers](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/304_optimizer.py)
   * [Tensorboard](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/305_tensorboard.py)
+  * [Dataset](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/306_dataset.py)
 * Advanced neural network
   * [CNN](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/401_CNN.py)
   * [RNN-Classification](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/402_RNN_classification.py)
