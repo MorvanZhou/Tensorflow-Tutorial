@@ -55,7 +55,7 @@ loss = tf.losses.softmax_cross_entropy(onehot_labels=tf_y, logits=output)       
 train_op = tf.train.AdamOptimizer(LR).minimize(loss)
 
 accuracy = tf.metrics.accuracy(          # return (acc, update_op), and create 2 local variables
-    labels=tf.argmax(tf_y, axis=1), predictions=tf.argmax(output, axis=1),)[1]
+    labels=tf.argmax(tf_y, axis=1), predictions=tf.argmax(output, axis=1))[1]
 
 sess = tf.Session()
 init_op = tf.group(tf.global_variables_initializer(), tf.local_variables_initializer()) # the local var is for accuracy_op
