@@ -36,7 +36,7 @@ All methods mentioned below have their video and text tutorial in Chinese. Visit
   * [AutoEncoder](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/404_AutoEncoder.py)
   * [DQN Reinforcement Learning](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/405_DQN_reinforcement_learning.py)
   * [GAN (Generative Adversarial Nets)](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/406_GAN.py) / [Conditional GAN](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/406_conditional_GAN.py)
-
+  * [Transfer Learning](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/407_transfer_learning.py)
 * Others (WIP)
   * [Dropout](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/501_dropout.py)
   * [Batch Normalization](https://github.com/MorvanZhou/Tensorflow-Tutorial/blob/master/tutorial-contents/502_batch_normalization.py)
