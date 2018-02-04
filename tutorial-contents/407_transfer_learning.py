@@ -31,7 +31,7 @@ def download():     # download tiger and kittycat image
             n_urls = len(urls)
             for i, url in enumerate(urls):
                 try:
-                    urlretrieve(url.strip(), './data/%s/%s' % (category, url.strip().split('/')[-1]))
+                    urlretrieve(url.strip(), './for_transfer_learning/data/%s/%s' % (category, url.strip().split('/')[-1]))
                     print('%s %i/%i' % (category, i, n_urls))
                 except:
                     print('%s %i/%i' % (category, i, n_urls), 'no image')
@@ -54,7 +54,7 @@ def load_img(path):
 def load_data():
     imgs = {'tiger': [], 'kittycat': []}
     for k in imgs.keys():
-        dir = './data/' + k
+        dir = './for_transfer_learning/data/' + k
         for file in os.listdir(dir):
             if not file.lower().endswith('.jpg'):
                 continue
