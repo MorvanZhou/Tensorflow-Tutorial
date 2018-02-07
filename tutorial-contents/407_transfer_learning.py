@@ -135,7 +135,7 @@ class Vgg16:
         return tf.nn.max_pool(bottom, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME', name=name)
 
     def conv_layer(self, bottom, name):
-        with tf.variable_scope(name):   # filter is constant
+        with tf.variable_scope(name):   # CNN's filter is constant, NOT Variable that can be trained
             conv = tf.nn.conv2d(bottom, self.data_dict[name][0], [1, 1, 1, 1], padding='SAME')
             lout = tf.nn.relu(tf.nn.bias_add(conv, self.data_dict[name][1]))
             return lout
