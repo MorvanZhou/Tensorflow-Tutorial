@@ -38,7 +38,7 @@ def save():
     for step in range(100):                             # train
         sess.run(train_op, {tf_x: x, tf_y: y})
 
-    saver.save(sess, 'params', write_meta_graph=False)  # meta_graph is not recommended
+    saver.save(sess, './params', write_meta_graph=False)  # meta_graph is not recommended
 
     # plotting
     pred, l = sess.run([o, loss], {tf_x: x, tf_y: y})
@@ -61,7 +61,7 @@ def reload():
     sess = tf.Session()
     # don't need to initialize variables, just restoring trained variables
     saver = tf.train.Saver()  # define a saver for saving and restoring
-    saver.restore(sess, 'params')
+    saver.restore(sess, './params')
 
     # plotting
     pred, l = sess.run([o_, loss_], {tf_x: x, tf_y: y})
