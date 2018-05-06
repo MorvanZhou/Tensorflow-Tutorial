@@ -6,7 +6,6 @@ More information about Dataset: https://github.com/tensorflow/tensorflow/blob/ma
 """
 import tensorflow as tf
 import numpy as np
-from tensorflow.contrib.data import Dataset
 
 
 # load your data or create your data in here
@@ -20,7 +19,7 @@ tfx = tf.placeholder(npx_train.dtype, npx_train.shape)
 tfy = tf.placeholder(npy_train.dtype, npy_train.shape)
 
 # create dataloader
-dataset = Dataset.from_tensor_slices((tfx, tfy))
+dataset = tf.data.Dataset.from_tensor_slices((tfx, tfy))
 dataset = dataset.shuffle(buffer_size=1000)   # choose data randomly from this buffer
 dataset = dataset.batch(32)                   # batch size you will use
 dataset = dataset.repeat(3)                   # repeat for 3 epochs
