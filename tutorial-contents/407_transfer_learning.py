@@ -79,7 +79,7 @@ class Vgg16:
         try:
             self.data_dict = np.load(vgg16_npy_path, encoding='latin1').item()
         except FileNotFoundError:
-            print('Please download VGG16 parameters at here https://mega.nz/#!YU1FWJrA!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM')
+            print('Please download VGG16 parameters from here https://mega.nz/#!YU1FWJrA!O1ywiCS2IiOlUCtCpI6HTJOMrneN-Qdv3ywQP5poecM\nOr from my Baidu Cloud: https://pan.baidu.com/s/1Spps1Wy0bvrQHH2IMkRfpg')
 
         self.tfx = tf.placeholder(tf.float32, [None, 224, 224, 3])
         self.tfy = tf.placeholder(tf.float32, [None, 1])
