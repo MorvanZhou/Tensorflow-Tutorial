@@ -29,7 +29,7 @@ tf_x = tf.placeholder(tf.float32, [None, TIME_STEP, INPUT_SIZE])        # shape(
 tf_y = tf.placeholder(tf.float32, [None, TIME_STEP, INPUT_SIZE])          # input y
 
 # RNN
-rnn_cell = tf.contrib.rnn.BasicRNNCell(num_units=CELL_SIZE)
+rnn_cell = tf.nn.rnn_cell.LSTMCell(num_units=CELL_SIZE)
 init_s = rnn_cell.zero_state(batch_size=1, dtype=tf.float32)    # very first hidden state
 outputs, final_s = tf.nn.dynamic_rnn(
     rnn_cell,                   # cell you have chosen

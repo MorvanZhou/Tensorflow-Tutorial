@@ -39,7 +39,7 @@ image = tf.reshape(tf_x, [-1, TIME_STEP, INPUT_SIZE])                   # (batch
 tf_y = tf.placeholder(tf.int32, [None, 10])                             # input y
 
 # RNN
-rnn_cell = tf.contrib.rnn.BasicLSTMCell(num_units=64)
+rnn_cell = tf.nn.rnn_cell.LSTMCell(num_units=64)
 outputs, (h_c, h_n) = tf.nn.dynamic_rnn(
     rnn_cell,                   # cell you have chosen
     image,                      # input
