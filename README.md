@@ -11,6 +11,8 @@
 
 # Tensorflow 2017 Tutorials
 
+**Tensorflow 2+ has been released, [here](https://github.com/MorvanZhou/Tensorflow2-Tutorial) is my quick TF2+ tutorial codes**
+
 
 In these tutorials, we will build our first Neural Network and try to build some advanced Neural Network architectures developed recent years.
 
