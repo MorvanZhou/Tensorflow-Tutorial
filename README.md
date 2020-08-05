@@ -16,7 +16,7 @@
 
 In these tutorials, we will build our first Neural Network and try to build some advanced Neural Network architectures developed recent years.
 
-All methods mentioned below have their video and text tutorial in Chinese. Visit [莫烦 Python](https://morvanzhou.github.io/tutorials/) for more.
+All methods mentioned below have their video and text tutorial in Chinese. Visit [莫烦 Python](https://mofanpy.com) for more.
 
 
 * Tensorflow basic
